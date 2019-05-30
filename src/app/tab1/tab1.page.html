@@ -10,13 +10,11 @@
 
   <ion-list>
     <ion-item>
-      <ion-button (click)="navToRental()"> Add New Rental </ion-button>
+      <ion-button (click)="navToNewRental()"> Add New Rental </ion-button>
     </ion-item>
 
-    <ion-item *ngFor="let rental of existingRentals">
+    <ion-item *ngFor="let rental of existingRentals" (click)="navToExistingRental(rental)">
       {{rental.getRentalName()}}
-      {{rental.getLocation()}}
-
       <img src={{rental.getImageLink()}} width="100px" slot="end"/>
     </ion-item>
 

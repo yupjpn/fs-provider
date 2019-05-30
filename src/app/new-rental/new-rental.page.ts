@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-rental',
-  templateUrl: './rental.page.html',
-  styleUrls: ['./rental.page.scss'],
+  selector: 'app-new-rental',
+  templateUrl: './new-rental.page.html',
+  styleUrls: ['./new-rental.page.scss'],
 })
-export class RentalPage implements OnInit {
+export class NewRentalPage implements OnInit {
 
   constructor(private navCtlr: NavController) { }
 
@@ -18,3 +18,4 @@ export class RentalPage implements OnInit {
   }
 
 }
+

@@ -3,12 +3,14 @@ export class Rental {
     private location: string;
     private pricePerNight: number;
     private imageLink: string;
+    private id: number;
 
-    constructor(rentalName: string, location: string, pricePerNight: number, imageLink: string) {
+    constructor(rentalName: string, location: string, pricePerNight: number, imageLink: string, id: number) {
         this.rentalName = rentalName;
         this.location = location;
         this.pricePerNight = pricePerNight;
         this.imageLink = imageLink;
+        this.id = id;
     }
 
     public setRentalName(rentalName: string) {
@@ -25,6 +27,10 @@ export class Rental {
 
     public setImageLink(imageLink: string) {
         this.imageLink = imageLink;
+    }
+
+    public setId(id: number) {
+        this.id = id;
     }
  
     public getRentalName() {
@@ -43,4 +49,7 @@ export class Rental {
         return this.imageLink;
     }   
 
+    public getId() {
+        return this.id;
+    }   
 }
