@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Rental } from '../models/rental.model';
-
 import { NavController } from '@ionic/angular';
+import { NavigationOptions } from '@ionic/angular/dist/providers/nav-controller';
+import { RentalService } from '../services/rental.service';
 
 @Component({
   selector: 'app-tab1',
@@ -9,33 +10,27 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  private existingRentals: Array<Rental>;
+  private rentals: Array<Rental>;
 
-  constructor(private navCtrl: NavController) {
-
-    let rental1 = new Rental("Comfy Cottage in Singapore", "Singapore, Singapore", 99, "https://upload.wikimedia.org/wikipedia/commons/4/4f/Singapore_Cottage%2C_Collingwood.jpg", 1);
-    let rental2 = new Rental("Gigantic House Near Duke", "Durham, North Carolina", 60, "https://upload.wikimedia.org/wikipedia/commons/7/7a/JOHN_SPRUNT_HILL_HOUSE%2C_DURHAM_COUNTY.JPG", 2);
-
-    this.existingRentals = new Array<Rental>();
-    this.existingRentals.push(rental1);
-    this.existingRentals.push(rental2);
+  constructor(private navCtrl: NavController, private rentalService: RentalService) {
+    console.log(this.rentalService);
+    this.rentals = this.rentalService.getRentals();
   }
 
-  public setExistingRentals(existingRentals: Array<Rental>) {
-    this.existingRentals = existingRentals;
+  public setRentals(rentals: Array<Rental>) {
+    this.rentals = rentals;
   }
 
-  public getExistingRentals() {
-    return this.existingRentals;
+  public getRentals() {
+    return this.rentals;
   }
 
   navToNewRental() {
-    // messed up on naming -- should have named rental "new-rental" instead
     this.navCtrl.navigateForward("new-rental");
   }
 
-  navToExistingRental(rental: Rental) {
-    this.navCtrl.navigateForward("existing-rental", {
+  navToRentalDetails(rental: Rental) {
+    this.navCtrl.navigateForward("rental-details", {
       queryParams: {
         rentalName: rental.getRentalName(),
         rentalId: rental.getId()

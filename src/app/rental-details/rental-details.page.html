@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button> </ion-back-button>
+    <ion-title> Rental Details </ion-title>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <img src={{currentRental.getImageLink()}} width="100px"/>
+      <h3 class="pad-left"> {{currentRental.getRentalName()}} </h3>
+      <p class="pad-left"> {{currentRental.getLocation()}} </p>
+      <p class="pad-left"> ${{currentRental.getPricePerNight()}} per night</p>
+
+    </ion-card>
+ 
+</ion-content>

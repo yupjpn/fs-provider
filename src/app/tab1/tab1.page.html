@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Existing Rentals
+      All Rentals
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,14 +9,13 @@
 <ion-content>
 
   <ion-list>
-    <ion-item>
-      <ion-button (click)="navToNewRental()"> Add New Rental </ion-button>
-    </ion-item>
+    <br>
+    <ion-button color="tertiary" (click)="navToNewRental()"> Add New Rental </ion-button>
 
-    <ion-item *ngFor="let rental of existingRentals" (click)="navToExistingRental(rental)">
-      {{rental.getRentalName()}}
-      <img src={{rental.getImageLink()}} width="100px" slot="end"/>
-    </ion-item>
+    <ion-card *ngFor="let rental of rentals" (click)="navToRentalDetails(rental)">
+      <img src={{rental.getImageLink()}} width="100px"/>
+      <h3 class="rental-name"> {{rental.getRentalName()}} </h3>
+    </ion-card>
 
   </ion-list>
 
