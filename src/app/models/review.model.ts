@@ -1,18 +1,16 @@
-import { Provider } from './provider.model';
 import { Rental } from './rental.model';
+import { Owner } from './owner.model';
 
 export class Review {
     private reviewerName: string;
     private rental: Rental;
-    private reviewee: Provider;
     private reviewText: string;
     private numOfStars: number;
     private date: string;
 
-    constructor(reviewerName: string, rental: Rental, reviewee: Provider, reviewText: string, numOfStars: number, date: string) {
+    constructor(reviewerName: string, rental: Rental, reviewText: string, numOfStars: number, date: string) {
         this.reviewerName = reviewerName;
         this.rental = rental;
-        this.reviewee = reviewee;
         this.reviewText = reviewText;
         this.numOfStars = numOfStars;
         this.date = date;
@@ -26,12 +24,10 @@ export class Review {
         this.rental = rental;
     }
 
-    public setReviewee(reviewee: Provider) {
-        this.reviewee = reviewee;
-    }
     public setReviewText(reviewText: string) {
         this.reviewText = reviewText;
     }
+
     public setNumOfStars(numOfStars: number) {
         this.numOfStars = numOfStars;
     }
@@ -40,7 +36,7 @@ export class Review {
         this.date = date;
     }
 
-    public getReviewer() {
+    public getReviewerName() {
         return this.reviewerName;
     }
 
@@ -48,9 +44,6 @@ export class Review {
         return this.rental;
     }
 
-    public getReviewee() {
-        return this.reviewee;
-    }
     public getReviewText() {
         return this.reviewText;
     }
