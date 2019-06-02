@@ -13,7 +13,7 @@
           <img src="https://i.boring.host/1654O2Dy.jpg">
         </ion-avatar>
         <ion-label>
-            <h2>Hi, I'm Yuki</h2>
+            <h2>Hi, I'm {{owner.getFirstName()}} </h2>
             <ion-note>Joined in {{owner.getJoinYear()}} </ion-note>
             <!-- <br>
             <ion-icon name="paw" class="icon"></ion-icon>
@@ -34,7 +34,7 @@
   
       <ion-item>
           <ion-label>
-          <h2> Yuki provided </h2>
+          <h2> {{owner.getFirstName()}} provided </h2>
           <ion-icon name="checkmark-circle" class="icon"></ion-icon>
           <span class="text"> Email address </span>
           <ion-icon name="checkmark-circle" class="icon"></ion-icon>

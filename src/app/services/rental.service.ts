@@ -13,7 +13,7 @@ export class RentalService {
   constructor() { 
     this.rentals = new Array<Rental>();
     
-    let rental1 = new Rental("Cozy Countryisde Cottage", "Bali, Indonesia", 92,
+    let rental1 = new Rental("Cozy Countryside Cottage", "Bali, Indonesia", 92,
     "http://thesmartlocal.com//images/easyblog_images/2088/Beautiful%20Homes/Hillside-House-1.jpg", 1);
 
     let rental2 = new Rental("Oceanfront House", "Cape Town, South Africa", 210,
