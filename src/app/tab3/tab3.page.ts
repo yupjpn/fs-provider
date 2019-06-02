@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Rental } from '../models/rental.model';
+import { RentalService } from '../services/rental.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  // private allReviews: Array<Review>;
+
+  constructor() {
+    // this.allRentals = rentalService.getRentals();
+
+  }
 
 }
