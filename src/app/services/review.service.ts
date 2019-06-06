@@ -10,7 +10,7 @@ import { Owner } from '../models/owner.model';
 
 export class ReviewService {
 
-  private owner: Owner; 
+  // private owner: Owner; 
   private reviews: Array<Review>;
 
   constructor(rentalService: RentalService) {
@@ -29,17 +29,17 @@ export class ReviewService {
     this.reviews.push(review3);
   }
 
-  public setOwner(owner: Owner) {
-    this.owner = owner;
-  }
+  // public setOwner(owner: Owner) {
+  //   this.owner = owner;
+  // }
 
   public setReviews(reviews: Array<Review>) {
     this.reviews = reviews;
   }
 
-  public getOwner() {
-    return this.owner;
-  }
+  // public getOwner() {
+  //   return this.owner;
+  // }
 
   public getReviews() {
     return this.reviews;

@@ -14,7 +14,7 @@ export class OwnerService {
   constructor(reviewService: ReviewService, rentalService: RentalService) {
     let reviews = Array<Review>();
 
-    this.owner = new Owner("Yuki", "Peters", "Tokyo, Japan", 2019, "yukipeters@yuh.com", "555-599-4628");
+    this.owner = new Owner("Yuki", "Peters", "yukipeters@yuh.com", "password");
   }
 
   public setOwner(owner: Owner) {

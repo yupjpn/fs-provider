@@ -4,18 +4,20 @@ import { Review } from './review.model';
 export class Owner {
     private firstName: string;
     private lastName: string;
-    private location: string;
-    private joinYear: number;
+    // private location: string;
+    // private joinYear: number;
     private email: string;
-    private phoneNumber: string;
+    private password: string;
+    // private phoneNumber: string;
 
-    constructor(firstName: string, lastName: string, location: string, joinYear: number, email: string, phoneNumber: string) {
+    constructor(firstName: string, lastName: string, email: string, password: string) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.location = location;
-        this.joinYear = joinYear;
+        // this.location = location;
+        // this.joinYear = joinYear;
         this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.password = password;
+        // this.phoneNumber = phoneNumber;
     }
 
     public setFirstName(firstName: string) {
@@ -26,21 +28,25 @@ export class Owner {
         this.lastName = this.lastName;
     }
 
-    public setLocation(location: string) {
-        this.location = location;
-    }
+    // public setLocation(location: string) {
+    //     this.location = location;
+    // }
 
-    public setJoinYear(joinYear: number) {
-        this.joinYear = joinYear;
-    }
+    // public setJoinYear(joinYear: number) {
+    //     this.joinYear = joinYear;
+    // }
 
     public setEmail(email: string) {
         this.email = email;
     }
 
-    public setPhoneNumber(phoneNumber: string) {
-        this.phoneNumber = phoneNumber;
+    public setPassword(password: string) {
+        this.password = password;
     }
+
+    // public setPhoneNumber(phoneNumber: string) {
+    //     this.phoneNumber = phoneNumber;
+    // }
 
     public getFirstName() {
         return this.firstName;
@@ -50,20 +56,24 @@ export class Owner {
         return this.lastName;
     }
 
-    public getLocation() {
-        return this.location;
-    }
+    // public getLocation() {
+    //     return this.location;
+    // }
 
-    public getJoinYear() {
-        return this.joinYear;
-    }
+    // public getJoinYear() {
+    //     return this.joinYear;
+    // }
 
     public getEmail() {
         return this.email;
     }
 
-    public getPhoneNumber() {
-        return this.phoneNumber;
+    public getPassword() {
+        return this.password;
     }
+
+    // public getPhoneNumber() {
+    //     return this.phoneNumber;
+    // }
 
 }
