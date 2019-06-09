@@ -6,12 +6,24 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-      <img src={{currentRental.imageLink}} width="100px"/>
-      <h3 class="pad-left"> {{currentRental.name}} </h3>
-      <p class="pad-left"> {{currentRental.location}} </p>
-      <p class="pad-left"> ${{currentRental.price}} per night</p>
+    <ion-list>
+      <ion-card>
+        <img src={{currentRental.imageLink}} width="100px"/>
+        <h3 class="pad-left"> {{currentRental.name}} </h3>
+        <p class="pad-left"> {{currentRental.location}} </p>
+        <p class="pad-left"> ${{currentRental.price}} per night</p>
+      </ion-card>
 
-    </ion-card>
+      <h2 class="bookings"> Bookings </h2>
+
+      <ion-card *ngFor="let booking of bookings">
+        <h5 class="pad-left"> Date From: {{booking.date_from}} </h5>
+        <h5 class="pad-left"> Date To: {{booking.date_to}} </h5>
+        <ion-button class="pad-left pad-right pad-bottom"> Accept </ion-button>
+        <ion-button class="pad-bottom"> Reject </ion-button>
+      </ion-card>
+    </ion-list>
+    <!-- <ion-button (click)="navToEditRentalPage()"> Edit Rental </ion-button> -->
+    <!-- <ion-button (click)="deleteRental()"> Delete Rental </ion-button> -->
  
 </ion-content>

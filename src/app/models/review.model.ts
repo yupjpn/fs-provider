@@ -1,5 +1,4 @@
 import { Rental } from './rental.model';
-import { Owner } from './owner.model';
 
 export class Review {
     public reviewerName: string;

@@ -9,19 +9,10 @@ import { Owner } from '../models/owner.model';
 })
 export class OwnerService {
 
-  private owner: Owner;
+  public owner: Owner;
 
-  constructor(reviewService: ReviewService, rentalService: RentalService) {
-    let reviews = Array<Review>();
-
-    this.owner = new Owner("Yuki", "Peters", "yukipeters@yuh.com", "password");
+  constructor() {
+    this.owner = new Owner("", "", "", "");
   }
 
-  public setOwner(owner: Owner) {
-    this.owner = owner;
-  }
-
-  public getOwner() {
-    return this.owner;
-  }
 }

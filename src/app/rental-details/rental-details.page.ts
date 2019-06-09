@@ -4,6 +4,7 @@ import { Rental } from '../models/rental.model';
 import { RentalService } from '../services/rental.service';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { Booking } from '../models/booking.model';
 
 @Component({
   selector: 'app-rental-details',
@@ -11,8 +12,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./rental-details.page.scss'],
 })
 export class RentalDetailsPage implements OnInit {
-  private rentalId: number;
-  private currentRental: Rental = new Rental("", "", 0, "", 0);
+  public rentalId: number;
+  public currentRental: Rental = new Rental("", "", 0, "", 0);
+  public bookings: Array<Booking> = new Array<Booking>();
 
   constructor(private activatedRoute: ActivatedRoute, private navCtrl: NavController,
     private httpClient: HttpClient) {
@@ -35,6 +37,17 @@ export class RentalDetailsPage implements OnInit {
           }
         );
 
+        this.httpClient.get("http://localhost:3000/api/bookings/" + this.rentalId).subscribe(
+          (response: any) => {
+            console.log("Response from query:");
+            console.log(response);
+    
+            // setting rentals array here equal to the array of properties
+            // returned by the query
+            this.bookings = response.bookings;
+          }
+        );
+
         if (! this.currentRental) {
           alert("Rental not found!");
           this.navCtrl.navigateBack("main/tabs/tab1");
@@ -46,5 +59,14 @@ export class RentalDetailsPage implements OnInit {
     }
 
   ngOnInit() {
+    
+  }
+
+  navToEditRentalPage(rental: Rental) {
+    this.navCtrl.navigateForward("edit-rental", {
+      queryParams: {
+        rentalId: rental.id
+      }
+    });
   }
 }
