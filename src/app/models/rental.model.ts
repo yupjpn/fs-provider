@@ -1,28 +1,29 @@
 export class Rental {
-    private rentalName: string;
+    private name: string;
     private location: string;
-    private pricePerNight: number;
+    private price: number;
     private imageLink: string;
+    private owner_id: number;
     private id: number;
 
-    constructor(rentalName: string, location: string, pricePerNight: number, imageLink: string, id: number) {
-        this.rentalName = rentalName;
+    constructor(name: string, location: string, price: number, imageLink: string, id: number, owner_id: number) {
+        this.name = name;
         this.location = location;
-        this.pricePerNight = pricePerNight;
+        this.price = price;
         this.imageLink = imageLink;
         this.id = id;
     }
 
-    public setRentalName(rentalName: string) {
-        this.rentalName = rentalName;
+    public setName(name: string) {
+        this.name = name;
     }
 
     public setLocation(location: string) {
         this.location = location;
     }
 
-    public setPricePerNight(pricePerNight: number) {
-        this.pricePerNight = pricePerNight;
+    public setPrice(price: number) {
+        this.price = price;
     }
 
     public setImageLink(imageLink: string) {
@@ -32,17 +33,21 @@ export class Rental {
     public setId(id: number) {
         this.id = id;
     }
+
+    public setOwnerId(owner_id: number) {
+        this.owner_id = owner_id;
+    }
  
-    public getRentalName() {
-        return this.rentalName;
+    public getName() {
+        return this.name;
     }
 
     public getLocation() {
         return this.location;
     }
 
-    public getPricePerNight() {
-        return this.pricePerNight;
+    public getPrice() {
+        return this.price;
     }   
 
     public getImageLink() {
@@ -51,5 +56,9 @@ export class Rental {
 
     public getId() {
         return this.id;
+    }   
+
+    public getOwnerId() {
+        return this.owner_id;
     }   
 }

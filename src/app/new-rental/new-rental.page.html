@@ -8,18 +8,22 @@
 <ion-content>
   <ion-list> 
     <ion-item>
-      <ion-input type="text" placeholder="Rental Name"> </ion-input>
+      <ion-input type="text" placeholder="Rental Name" [(ngModel)]="rental.name"> </ion-input>
     </ion-item>
 
     <ion-item>
-        <ion-input type="text" placeholder="Location"> </ion-input>
+        <ion-input type="text" placeholder="Location" [(ngModel)]="rental.location"> </ion-input>
     </ion-item>
 
     <ion-item>
-        <ion-input type="number" placeholder="Price Per Night (USD)"> </ion-input>
+        <ion-input type="number" placeholder="Price Per Night (USD)" [(ngModel)]="rental.price"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Image URL" [(ngModel)]="rental.imageLink"> </ion-input>
     </ion-item>
     
-    <ion-button (click)="navBackExistingRentals()"> Done </ion-button>
+    <ion-button (click)="submit()"> Done </ion-button>
   </ion-list>
 
 </ion-content>

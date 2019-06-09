@@ -9,23 +9,19 @@
 <ion-content>
   <div class="ion-padding">
     <ion-item>
-      <ion-label> First Name </ion-label>
-      <ion-input [(ngModel)]="owner.firstname"> </ion-input>
+      <ion-input placeholder="First Name" type="text" [(ngModel)]="owner.firstName"> </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label> Last Name </ion-label>
-      <ion-input [(ngModel)]="owner.lastname"> </ion-input>
+      <ion-input placeholder="Last Name" type="text" [(ngModel)]="owner.lastName"> </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label> Email </ion-label>
-      <ion-input [(ngModel)]="owner.email"> </ion-input>
+      <ion-input placeholder="Email" type="text" [(ngModel)]="owner.email"> </ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label> Password </ion-label>
-      <ion-input [(ngModel)]="owner.password"> </ion-input>
+      <ion-input placeholder="Password" type="password" [(ngModel)]="owner.password"> </ion-input>
     </ion-item>
   </div>
 

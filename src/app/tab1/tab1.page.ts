@@ -32,7 +32,7 @@ export class Tab1Page {
   navToRentalDetails(rental: Rental) {
     this.navCtrl.navigateForward("rental-details", {
       queryParams: {
-        rentalName: rental.getRentalName(),
+        rentalName: rental.getName(),
         rentalId: rental.getId()
       }
     });
