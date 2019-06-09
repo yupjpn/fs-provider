@@ -19,7 +19,8 @@ export class NewRentalPage implements OnInit {
       let ownerId = localStorage.getItem("owner_id");
       let numOwnerId = parseInt(ownerId);
       console.log("owner Id:");
-      this.rental = new Rental("", "", 0, "", 0, numOwnerId);
+      console.log(ownerId);
+      this.rental = new Rental("", "", 0, "", numOwnerId);
      }
 
   async presentAlert() {

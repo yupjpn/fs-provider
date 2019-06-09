@@ -13,8 +13,8 @@
     <ion-button color="tertiary" (click)="navToNewRental()"> Add New Rental </ion-button>
 
     <ion-card *ngFor="let rental of rentals" (click)="navToRentalDetails(rental)">
-      <img src={{rental.getImageLink()}} width="100px"/>
-      <h3 class="rental-name"> {{rental.getRentalName()}} </h3>
+      <img src={{rental.imageLink}} width="100px"/>
+      <h3 class="rental-name"> {{rental.name}} </h3>
     </ion-card>
 
   </ion-list>

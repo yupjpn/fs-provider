@@ -3,6 +3,7 @@ import { Rental } from '../models/rental.model';
 import { NavController } from '@ionic/angular';
 import { NavigationOptions } from '@ionic/angular/dist/providers/nav-controller';
 import { RentalService } from '../services/rental.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab1',
@@ -10,19 +11,24 @@ import { RentalService } from '../services/rental.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  private rentals: Array<Rental>;
+  public rentals: Array<Rental>;
 
-  constructor(private navCtrl: NavController, private rentalService: RentalService) {
-    console.log(this.rentalService);
-    this.rentals = this.rentalService.getRentals();
-  }
+  constructor(private navCtrl: NavController, private httpClient: HttpClient) {
+    const ownerId = localStorage.getItem("owner_id");
+    console.log("Owner ID:");
+    console.log(ownerId);
 
-  public setRentals(rentals: Array<Rental>) {
-    this.rentals = rentals;
-  }
+    // there should be an ownerId because you can't get into the app without one
+    this.httpClient.get("http://localhost:3000/api/properties/ownerId/" + ownerId).subscribe(
+      (response: any) => {
+        console.log("Response from query:");
+        console.log(response);
 
-  public getRentals() {
-    return this.rentals;
+        // setting rentals array here equal to the array of properties
+        // returned by the query
+        this.rentals = response.rentals;
+      }
+    );
   }
 
   navToNewRental() {
@@ -32,8 +38,7 @@ export class Tab1Page {
   navToRentalDetails(rental: Rental) {
     this.navCtrl.navigateForward("rental-details", {
       queryParams: {
-        rentalName: rental.getName(),
-        rentalId: rental.getId()
+        rentalId: rental.id
       }
     });
   }

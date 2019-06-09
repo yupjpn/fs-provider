@@ -39,7 +39,7 @@ export class RentalService {
 
     this.rentals.forEach(
       (rental: Rental) => {
-        if (rental.getId() == id) {
+        if (rental.id == id) {
           foundRental = rental;
           console.log("Found rental");
         }
