@@ -69,4 +69,17 @@ export class RentalDetailsPage implements OnInit {
       }
     });
   }
+
+  navToTabs() {
+    this.navCtrl.navigateBack("main/tabs/tab1");
+  }
+
+  deleteRental() {
+    this.httpClient.delete("http://localhost:3000/api/properties/" + this.rentalId).subscribe(
+      (response: any) => {
+        console.log("Response from query:");
+        console.log(response);
+      }
+    );
+  }
 }

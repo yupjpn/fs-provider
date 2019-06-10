@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>edit-rental</ion-title>
+    <ion-title>
+      Edit Rental
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="ion-padding">
+    <ion-item>
+      <ion-input placeholder="First Name" type="text" [(ngModel)]="currentRental.name"> </ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-input placeholder="Location" type="text" [(ngModel)]="currentRental.location"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Image URL" type="text" [(ngModel)]="currentRental.imageLink"> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Price" type="number" [(ngModel)]="currentRental.price"> </ion-input>
+    </ion-item>
+  </div>
+
+  <ion-button expand="full" (click)="update()"> Update </ion-button>
 </ion-content>

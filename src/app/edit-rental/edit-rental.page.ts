@@ -46,21 +46,34 @@ export class EditRentalPage implements OnInit {
 
      }
 
-  // update() {
-  //   console.log("Submitting to the server...");
-  //   // console.log(this.currentRental);
+  navToTabs() {
+    this.navCtrl.navigateBack("main/tabs/tab1");
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+    header: "Error",
+    subHeader: "Could not register. The email you entered may already be taken.",
+    buttons: ['Dismiss']
+    });
+    await alert.present(); 
+}
+
+  update() {
+    console.log("Submitting to the server...");
+    // console.log(this.currentRental);
     
-  //     this.httpClient.patch("http://localhost:3000/api/properties/", this.currentRental).subscribe(
-  //       (response: any) => {
-  //         console.log(response);
-  //         this.navToLogin();
-  //       },
-  //       (err) => {
-  //         console.log(err);
-  //         this.presentAlert();
-  //       }
-  //     );      
-  // }
+      this.httpClient.post("http://localhost:3000/api/properties/update", this.currentRental).subscribe(
+        (response: any) => {
+          console.log(response);
+          this.navToTabs();
+        },
+        (err) => {
+          console.log(err);
+          this.presentAlert();
+        }
+      );      
+  }
 
   ngOnInit() {
   }
